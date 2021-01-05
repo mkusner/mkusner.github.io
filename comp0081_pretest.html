@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+<!--
+<script type="text/javascript" src="https://latex.codecogs.com/latexit.js"></script>
+<script type="text/javascript">
+LatexIT.add('p',true);
+</script>
+-->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true
+      },
+      "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
+  </script>
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+	
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Placement Exam</title>
+<link href="projects.css" rel="stylesheet" type="text/css">
+</head>
+
+<body link="red" vlink="red" alink="red"> 
+
+<h2>COMP0081 Mathematical Background Exam</h2>
+(Term 2 2021)
+
+<p><bold><font color="red">Note</font></bold> This quiz is for self-examination. It is far more valuable <i>to you</i> if you refrain from web searching answers --- using Wikipedia to look up important concepts (click-able pointers in red color) is fine. You do not have to finish all questions. Necessary mathematical topics would be discussed, albeit briefly, in lectures. The orders/points of questions do <i>not always</i> imply difficulties. <br></p>
+
+
+<h4>Convexity</h4>
+The following questions test your basic skills in computing the derivatives of univariate functions, as well as applying the concept of 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Convex">convexity</a></font> to determine the properties of the functions.
+<ol>
+<li> (1 pt) Show that $f(x) = x^2$ and $g(x) = \ln x$ are convex and concave, respectively.</li>
+<li> (2 pts) Show that $h(x) = \frac{1}{1+e^{-x}}$ is neither convex or concave (feel free to plot the function to get some intuition why this is the case).</li>
+<li> (2 pts) Show that $-\ln h(x)$ is convex.</li>
+</ol>
+
+<h4>Basic concepts from information theory</h4>
+<ol>
+<li> (2 pts) Prove that $x-1 \ge \ln x$ for $\forall x>0$. (<i>Hint</i>: Show the minimum of $x-1 - \ln x$ is 0 by studying the function's 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Monotonic_function">monotonicity</a></font>.)</li>
+
+<li> (3 pts) Using the above property to show that, for any probability vectors $\boldsymbol{p}=(p_1,\cdots p_K)$ and $\boldsymbol{q}=(q_1,\cdots q_K)$, </li>
+\[
+KL(\boldsymbol{p} \| \boldsymbol{q}) = \sum_{k=1}^{K}p_{k}\ln\frac{p_{k}}{q_{k}}\geq 0,
+\]
+where $KL(\boldsymbol{p} \| \boldsymbol{q})$ is called the 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Kullback-Leibler_divergence">Kullback-Leibler divergence</a></font> between $\boldsymbol{p}$ and $\boldsymbol{q}$. Note that for probability vectors, $p_k \ge 0$ and $q_k \ge 0$ and additionally, $\sum_k p_k=1$ and $\sum_k q_k =1$, 
+
+<li>  (3 pts) Using the above property to show that, for any probability vector $\boldsymbol{p}=(p_1,\cdots p_K)$, </li>
+\[
+H(\boldsymbol{p}) = -\sum_{k=1}^{K}p_{k}\ln p_{k} \leq \ln K
+\]
+where $H(\boldsymbol{p})$ is called the 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Entropy">entropy</a></font> of $\boldsymbol{p}$.
+</ol>
+
+<h4>Optimization</h4>
+
+The following questions test your familiarity with the method of 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Lagrange_multiplier">Lagrange multiplier</a></font>.
+<ol>
+ <li> (2 pts) Consider the following two functions </li>
+\begin{align}
+\notag f_1(x,y) &= (x-1)^2 + (y-1)^2\\
+\notag f_2(x,y) &= (x-3)^2 + (y-2)^2
+\end{align}
+what are their minima if we  constrain $x^2+y^2\leq 1$? Please show the derivation steps.
+
+<li> (5 pts) In a ${\mathcal{R}}^{\mathsf{D}}$ (i.e., $\mathsf{D}$-dimensional Euclidean space), what is the shortest distance from a point $\boldsymbol{x}_0\in {\mathcal{R}}^{\mathsf{D}}$ to a hyperplane $H: \boldsymbol{w}^T\boldsymbol{x} + b = 0$? You need to express this distance in terms of $\boldsymbol{w}$, $b$ and $\boldsymbol{x}_0$. (<i>Hint</i>: Please show the detailed derivation steps. Formulate this problem as a constrained optimization and then use the method of Lagrange multiplier.)</li>
+</ol>
+
+<h4>Probability and statistics</h4>
+
+<ol>
+<li> (3 pts) Consider a random variable $X$ that follows the 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)">uniform distribution</a></font> between $0$ and $a$. Please calculate the mean, variance and entropy of $X$. Please show the steps of the calculation (you can look up results on the web to verify your calculation.)</li>
+<li> (7 pts) Suppose we have observed $N$ independent random samples of $X$, $(x_1, x_2, \cdots, x_N)$. What is the 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Maximum_likelihood">maximum likelihood</a></font> estimation of $a$? Please show the derivation steps. Is this estimate unbiased? Please justify your answer too.</li>
+<li> (6 pts) Given two independent 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Normal_distribution">Gaussian random variables</a></font> $U \sim \mathcal{N}(-1,1)$ and $V\sim \mathcal{N}(1,1)$, are the following random variables also Gaussian? If so, what are their means and (co)-variances? Note that $\boldsymbol{T}$ is a vector.</li>
+$ Y = U + V, \quad
+   Z = U\times V, \quad \boldsymbol{T} = \left( \begin{array}{c}U+V\\ U-2V\end{array}\right), \quad
+     W = \left\{ \begin{array}{ll}
+         U & \mbox{with }50\%\mbox{ chance}\\
+         V & \mbox{with }50\%\mbox{ chance}\end{array} \right.
+$
+<li> (5 pts) We have two coins: one is a  fair coin -- observing either the head side or the tail side  with 50&#37; probability.  The other coin is a fake coin which has head on both sides. Suppose we randomly pick one and toss it (the two coins are otherwise the same so either one would be picked up with a 50&#37; probability). (<i>Hint</i>: Use the rules of probability and 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Bayes'_rule">Bayes's rule</a></font>).</li>
+<ul>
+<li> What is the probability we observe head?</li>
+<li> If we indeed observe head, what is the probability we had picked the fake coin?</li>
+</ul>
+</ol>
+
+<h4>Linear algebra</h4>
+
+<ol>
+<li> (4 pts) Consider the covariance matrix $\boldsymbol{\Sigma}$ of a random vector $\boldsymbol{X}$, which is $\boldsymbol{\Sigma} = \mathbb{E}[(\boldsymbol{X}-\mathbb{E}\boldsymbol{X})(\boldsymbol{X}-\mathbb{E}\boldsymbol{X})^\top]$, where $\mathbb{E}\boldsymbol{X}$ is the expectation of $\boldsymbol{X}$. Prove that $\boldsymbol{\Sigma}$ is  
+<font color="red"><a href="http://en.wikipedia.org/wiki/Positive-semidefinite_matrix#Negative-definite.2C_semidefinite_and_indefinite_matrices">positive-semidefinite</a></font>.</li>
+<li> (5 pts) Let $\boldsymbol{A}$ and $\boldsymbol{B}$ be two ${\mathcal{R}}^{\mathsf{D}\times\mathsf{D}}$ symmetric matrices. Suppose $\boldsymbol{A}$ and $\boldsymbol{B}$ have the exact same set of 
+<font color="red"><a href="http://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">eigenvectors</a></font> $\boldsymbol{u}_1, \boldsymbol{u}_2, \cdots, \boldsymbol{u}_\mathsf{D}$ with the corresponding eigenvalues $\alpha_1, \alpha_2, \cdots, \alpha_{\mathsf{D}}$ for $\boldsymbol{A}$, and   $\beta_1, \beta_2, \cdots, \beta_{\mathsf{D}}$ for $\boldsymbol{B}$. Please write down the eigenvectors and their corresponding eigenvalues for the following matrices</li>
+<ul>
+<li>  $\boldsymbol{C} = \boldsymbol{A}+\boldsymbol{B}$,  $\boldsymbol{D} = \boldsymbol{A} - \boldsymbol{B}$,  $\boldsymbol{E} = \boldsymbol{A}\boldsymbol{B}$, $\boldsymbol{F} = \boldsymbol{A}^{-1}\boldsymbol{B}$ (assume $\boldsymbol{A}$ is invertible)</li>
+<li>  $\boldsymbol{G} = \left(\begin{array}{cc}
+\boldsymbol{A} & \boldsymbol{0}\\
+\boldsymbol{0} & \boldsymbol{B}\end{array}\right) \in {\mathcal{R}}^{2\mathsf{D} \times 2\mathsf{D}}$, where $\boldsymbol{0} \in {\mathcal{R}}^{\mathsf{D}\times\mathsf{D}}$ is the all-zero matrix. </li>
+</ul>
+</ol>
+
+
+</body>
+</html>
